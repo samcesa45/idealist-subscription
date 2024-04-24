@@ -46,4 +46,11 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
         'password' => 'hashed',
     ];
+
+    public function decreaseCredits(int $credits):self
+    {
+        $this->available_credits -= $credits;
+        $this->save();
+        return $this;
+    }
 }

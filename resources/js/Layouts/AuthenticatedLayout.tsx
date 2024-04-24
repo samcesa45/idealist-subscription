@@ -17,7 +17,7 @@ export default function Authenticated({
     return (
         <div className="min-h-screen bg-gray-100">
             <nav className="bg-white border-b border-gray-100">
-                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
                     <div className="flex justify-between h-16">
                         <div className="flex">
                             <div className="shrink-0 flex items-center">
@@ -49,6 +49,21 @@ export default function Authenticated({
                         </div>
 
                         <div className="hidden sm:flex sm:items-center sm:ms-6">
+                            <span className=" text-black flex gap-3">
+                                <img
+                                    src="/img/coin.jpg"
+                                    style={{ filter: "invert(0)" }}
+                                    className="w-[20px]"
+                                    alt="coin"
+                                />
+                                {user.available_credits} Credits
+                            </span>
+                            <Link
+                                href="/"
+                                className="text-gray-400 py-1 px-3 rounded border transition-colors hover:text-gray-800 hover:bg-gray-600 hover:text-white"
+                            >
+                                Get More
+                            </Link>
                             <div className="ms-3 relative">
                                 <Dropdown>
                                     <Dropdown.Trigger>

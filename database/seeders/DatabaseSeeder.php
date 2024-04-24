@@ -34,7 +34,7 @@ class DatabaseSeeder extends Seeder
          Feature::create([
             'route_name'=> 'feature2.index',
             'image'=>'https://static-00.iconduck.com/assets.00/plus-icon-2048x2048-z6v59bd6.png',
-            'name'=>'Calculate Sum',
+            'name'=>'Calculate Difference',
             'description' => 'Calculate difference of two numbers',
             'required_credits'=> 3,
             'active' => true,
