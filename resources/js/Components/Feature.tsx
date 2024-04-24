@@ -1,10 +1,7 @@
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
+import { FeatureProps, PageProps } from "@/types";
 import { Head, Link, usePage } from "@inertiajs/react";
-type FeatureProps = {
-    name: string;
-    description: string;
-    required_credits: number;
-};
+
 export default function Feature({
     feature,
     answer,
@@ -14,7 +11,7 @@ export default function Feature({
     answer: number;
     children: React.ReactNode;
 }) {
-    const { auth } = usePage().props;
+    const { auth } = usePage<PageProps>().props;
     const availableCredits = auth.user.available_credits;
     return (
         <AuthenticatedLayout

@@ -4,8 +4,9 @@ import TextInput from "@/Components/TextInput";
 import PrimaryButton from "@/Components/PrimaryButton";
 import { useForm } from "@inertiajs/react";
 import Feature from "@/Components/Feature";
+import { FeatureProps } from "@/types";
 
-export default function Index({ feature, answer }) {
+export default function Index({ feature, answer }:{feature:FeatureProps;answer:number}) {
     const { data, setData, post, reset, errors, processing } = useForm({
         number1: "",
         number2: "",
