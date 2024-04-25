@@ -48,7 +48,7 @@ export default function Authenticated({
                             </div>
                         </div>
 
-                        <div className="hidden sm:flex sm:items-center sm:ms-6">
+                        <div className="hidden sm:flex sm:items-center sm:ms-6 gap-3">
                             <span className=" text-black flex gap-3">
                                 <img
                                     src="/img/coin.jpg"
@@ -59,8 +59,8 @@ export default function Authenticated({
                                 {user.available_credits} Credits
                             </span>
                             <Link
-                                href="/"
-                                className="text-gray-400 py-1 px-3 rounded border transition-colors hover:text-gray-800 hover:bg-gray-600 hover:text-white"
+                                href={route("credit.index")}
+                                className="text-gray-400 py-1 px-3 rounded border transition-colors dark:hover:text-gray-800 hover:bg-gray-600 hover:text-white"
                             >
                                 Get More
                             </Link>

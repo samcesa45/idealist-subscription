@@ -6,10 +6,17 @@ export interface User {
     available_credits: number;
 }
 
-export interface FeatureProps {
+export interface Feature {
+    id?:string;
     name: string;
     description: string;
     required_credits: number;
+}
+export interface Package {
+    id?: string;
+    name: string;
+    price: string;
+    credits: number;
 }
 
 export type PageProps<
@@ -19,3 +26,12 @@ export type PageProps<
         user: User;
     };
 };
+
+export interface PackageProps extends Package {
+    data: Package[];
+}
+export interface FeatureProps extends Feature {
+    data: Feature[];
+}
+
+
