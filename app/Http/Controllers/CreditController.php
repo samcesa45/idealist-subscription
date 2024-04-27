@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Package;
 use App\Models\Feature;
+use App\Models\Transaction;
 use App\Http\Resources\PackageResource;
 use App\Http\Resources\FeatureResource;
 
@@ -30,7 +31,7 @@ class CreditController extends Controller
        $checkout_session = $stripe->checkout->sessions->create([
         'line_items' => [
            [
-             'price'=> [
+             'price_data'=> [
                 'currency' => 'usd',
                 'product_data' => [
                    'name' => $package->name . ' - ' .
@@ -51,7 +52,7 @@ class CreditController extends Controller
         'price' => $package->price,
         'credits' => $package->credits,
         'session_id' => $checkout_session->id,
-        'user_id' => auth()->user->id,
+        'user_id' => auth()->user()->id,
         'package_id' => $package->id,
        ]);
 

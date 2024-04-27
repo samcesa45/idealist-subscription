@@ -12,15 +12,20 @@ class UsedFeature extends Model
     protected $fillable = [
         'feature_id',
         'user_id',
-        'credits'
+        'credits',
+        'data'
     ];
 
-    protected function casts(): array 
+    protected $casts = [
+        'data' => 'array'
+    ];
+
+   /*  protected function casts(): array 
     {
         return [
             'data' => 'array'
         ];
-    }
+    } */
 
     public function user()
     {

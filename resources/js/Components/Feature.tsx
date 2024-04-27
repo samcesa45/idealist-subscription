@@ -12,7 +12,7 @@ export default function Feature({
     children: React.ReactNode;
 }) {
     const { auth } = usePage<PageProps>().props;
-    const availableCredits = auth.user.available_credits;
+    const availableCredits = auth?.user?.available_credits;
     return (
         <AuthenticatedLayout
             user={auth.user}

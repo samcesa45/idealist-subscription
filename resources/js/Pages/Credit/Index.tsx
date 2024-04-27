@@ -1,26 +1,27 @@
-import CreditsPricingCards from "@/Components/CreditsPricingCards";
+import PackagesPricingCards from "@/Components/PackagesPricingCards";
 import AuthenticatedLayout from "@/Layouts/AuthenticatedLayout";
 import { FeatureProps, PackageProps, PageProps } from "@/types";
-import { Head } from "@inertiajs/react";
+import { Head, usePage } from "@inertiajs/react";
 
 export default function Index({
-    auth,
+    // auth,
     packages,
     features,
     success,
     error,
 }: {
-    auth: PageProps;
+    // auth: PageProps;
     packages: PackageProps;
     features: FeatureProps;
     success: boolean;
     error: any;
 }) {
-    const availableCredits = auth?.auth?.user?.available_credits;
-    console.log(packages);
+    const { auth } = usePage<PageProps>().props;
+    const availableCredits = auth.user.available_credits;
+
     return (
         <AuthenticatedLayout
-            user={auth.auth.user}
+            user={auth?.user}
             header={
                 <h2 className="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                     Your Credits
@@ -43,7 +44,7 @@ export default function Index({
                     <div className="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg relative">
                         <div className="flex flex-col gap-3 items-center p-4">
                             <img
-                                src="/img/coin.png"
+                                src="/img/coin.jpg"
                                 alt=""
                                 className="w-[100px]"
                             />
@@ -52,9 +53,9 @@ export default function Index({
                             </h3>
                         </div>
                     </div>
-                    <CreditsPricingCards
-                        packages={packages.data as any}
-                        features={features.data as any}
+                    <PackagesPricingCards
+                        packages={packages}
+                        features={features}
                     />
                 </div>
             </div>
