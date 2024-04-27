@@ -7,7 +7,6 @@ export default function Index(props: {
     usedFeatures: UsedFeatureProps;
 }) {
     const { auth, usedFeatures } = props;
-    console.log("usedFeatures", usedFeatures?.data);
 
     return (
         <AuthenticatedLayout
